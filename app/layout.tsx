@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { CookieConsent } from "@/components/cookie-consent";
 import { company, sameAsLinks } from "@/data/company";
 import { services } from "@/lib/data";
 
@@ -179,8 +180,16 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied'
+});
 gtag('config', '${GA_ID}');`}
         </Script>
+
+        <CookieConsent />
       </body>
     </html>
   );
