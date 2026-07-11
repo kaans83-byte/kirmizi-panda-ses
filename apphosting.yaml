@@ -9,7 +9,7 @@ env:
   # Tüm SEO/canonical/sitemap/OG adresleri bunu kullanır.
   # Alan adını bağlayınca gerçek domain ile güncelleyin.
   - variable: NEXT_PUBLIC_SITE_URL
-    value: https://kirmizipanda.com.tr
+    value: https://kirmizipanda.com
     availability:
       - BUILD
       - RUNTIME

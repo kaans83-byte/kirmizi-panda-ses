@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { disciplineSlugs } from "@/lib/consulting";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com.tr";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

@@ -11,7 +11,7 @@ import { OtherDisciplines } from "@/components/consulting/other-disciplines";
 import { ConsultingCTA } from "@/components/consulting/consulting-cta";
 import { disciplineSlugs, getDiscipline } from "@/lib/consulting";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com.tr";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com";
 
 export function generateStaticParams() {
   return disciplineSlugs.map((slug) => ({ slug }));

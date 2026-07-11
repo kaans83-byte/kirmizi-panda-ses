@@ -31,7 +31,7 @@ export const company = {
   phone: "+90 532 662 24 18",
   phoneHref: "+905326622418",
   email: "kirmizipandaajans@gmail.com",
-  website: process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com.tr",
+  website: process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com",
 
   // Google
   googleBusinessUrl: "https://share.google/PXhmWSQMlHdFOMepL", // Google paylaşım bağlantısı

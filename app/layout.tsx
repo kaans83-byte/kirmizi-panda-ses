@@ -10,7 +10,7 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com.tr";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com";
 const TITLE = "Yapay Zekâ, Reklam Prodüksiyonu ve Dijital Büyüme";
 const DESCRIPTION =
   "Kırmızı Panda AI Reklam Ajansı: strateji, yapay zekâ, reklam prodüksiyonu, reklam müziği, sinema FX, web, SEO ve dijital büyüme çözümlerini tek çatı altında sunan yaratıcı teknoloji ajansı.";
