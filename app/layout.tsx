@@ -61,6 +61,9 @@ export const metadata: Metadata = {
     },
   },
   category: "business",
+  verification: {
+    google: "yxx305jyuns2KS7JmQt9bxx4V3dfNyEoSLuaarSGodE",
+  },
 };
 
 export const viewport: Viewport = {
