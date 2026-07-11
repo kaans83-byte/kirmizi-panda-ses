@@ -65,33 +65,40 @@ export function PandaSymbol() {
             </linearGradient>
           </defs>
 
-          {/* kulaklar */}
-          <circle cx="52" cy="52" r="24" fill="url(#panda-face)" />
-          <circle cx="148" cy="52" r="24" fill="url(#panda-face)" />
-          <circle cx="52" cy="54" r="12" fill="#0a0a0a" opacity="0.85" />
-          <circle cx="148" cy="54" r="12" fill="#0a0a0a" opacity="0.85" />
+          {/* kulaklar (yumuşak, krem içli) */}
+          <circle cx="56" cy="56" r="22" fill="url(#panda-face)" />
+          <circle cx="144" cy="56" r="22" fill="url(#panda-face)" />
+          <circle cx="56" cy="58" r="11" fill="#fbe9dc" />
+          <circle cx="144" cy="58" r="11" fill="#fbe9dc" />
 
-          {/* yüz — geometrik yuvarlatılmış altıgen */}
+          {/* yüz — yumuşak yuvarlak */}
           <path
-            d="M100 44 L150 70 L150 122 L100 156 L50 122 L50 70 Z"
+            d="M100 50 C66 50 48 74 48 104 C48 136 72 158 100 158 C128 158 152 136 152 104 C152 74 134 50 100 50 Z"
             fill="url(#panda-face)"
-            stroke="hsl(0 90% 70%)"
+            stroke="hsl(0 90% 72%)"
             strokeWidth="1.5"
-            strokeLinejoin="round"
           />
 
-          {/* göz maskeleri */}
-          <path d="M74 92 l16 6 -4 20 -16 -4 z" fill="#0a0a0a" opacity="0.9" />
-          <path d="M126 92 l-16 6 4 20 16 -4 z" fill="#0a0a0a" opacity="0.9" />
+          {/* yanak allığı */}
+          <circle cx="69" cy="123" r="7" fill="hsl(0 95% 72%)" opacity="0.55" />
+          <circle cx="131" cy="123" r="7" fill="hsl(0 95% 72%)" opacity="0.55" />
 
-          {/* gözler */}
-          <circle cx="80" cy="104" r="5" fill="#fff" />
-          <circle cx="120" cy="104" r="5" fill="#fff" />
-          <circle cx="80" cy="104" r="2.2" fill="#0a0a0a" />
-          <circle cx="120" cy="104" r="2.2" fill="#0a0a0a" />
+          {/* göz çevresi — krem */}
+          <ellipse cx="80" cy="106" rx="15" ry="17" fill="#fbe9dc" />
+          <ellipse cx="120" cy="106" rx="15" ry="17" fill="#fbe9dc" />
 
-          {/* burun (geometrik) */}
-          <path d="M100 118 l8 10 -8 8 -8 -8 z" fill="#0a0a0a" />
+          {/* büyük, sevimli gözler */}
+          <circle cx="81" cy="107" r="8.5" fill="#0a0a0a" />
+          <circle cx="119" cy="107" r="8.5" fill="#0a0a0a" />
+          <circle cx="84" cy="104" r="3" fill="#fff" />
+          <circle cx="122" cy="104" r="3" fill="#fff" />
+          <circle cx="78.5" cy="110.5" r="1.4" fill="#fff" opacity="0.7" />
+          <circle cx="116.5" cy="110.5" r="1.4" fill="#fff" opacity="0.7" />
+
+          {/* burun + gülümseme */}
+          <path d="M100 121c4 0 6.5 2.4 6.5 5 0 3-3 5-6.5 5s-6.5-2-6.5-5c0-2.6 2.5-5 6.5-5Z" fill="#0a0a0a" />
+          <path d="M100 132C97 138 90 139 86 133" fill="none" stroke="#0a0a0a" strokeWidth="2.4" strokeLinecap="round" />
+          <path d="M100 132C103 138 110 139 114 133" fill="none" stroke="#0a0a0a" strokeWidth="2.4" strokeLinecap="round" />
         </svg>
       </motion.div>
 
