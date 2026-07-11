@@ -1,0 +1,15 @@
+# Firebase App Hosting yapılandırması
+# Docs: https://firebase.google.com/docs/app-hosting/configure
+
+runConfig:
+  # Ücretsiz kotada kalmak için tek örnek yeterli; trafik artınca yükseltilebilir.
+  maxInstances: 1
+
+env:
+  # Tüm SEO/canonical/sitemap/OG adresleri bunu kullanır.
+  # Alan adını bağlayınca gerçek domain ile güncelleyin.
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://kirmizipanda.com.tr
+    availability:
+      - BUILD
+      - RUNTIME

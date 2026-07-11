@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Marka kırmızısı */
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 84% 60%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+
+  /* Klavye kullanıcıları için her yerde görünür odak halkası */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Ana içeriğe atla (skip link) — yalnızca odaklanınca görünür */
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+    border-radius: 0.75rem;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    padding: 0.65rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  /* İnce ızgara / noise arka plan dokusu */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 100% / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Kırmızı gradyan metin vurgusu */
+  .text-gradient {
+    @apply bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent;
+  }
+  .text-gradient-red {
+    background: linear-gradient(180deg, hsl(0 84% 66%), hsl(0 84% 52%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: hsl(0 0% 8% / 0.6);
+    backdrop-filter: blur(14px) saturate(160%);
+  }
+  .radial-fade {
+    -webkit-mask-image: radial-gradient(closest-side, black 60%, transparent);
+    mask-image: radial-gradient(closest-side, black 60%, transparent);
+  }
+}
+
+/* Hareket azaltma tercihi: CSS animasyon/geçişlerini de etkisiz kıl
+   (Framer Motion animasyonları JS tarafında useReducedMotion ile zaten durur). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
