@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { company, sameAsLinks } from "@/data/company";
 import { services } from "@/lib/data";
@@ -11,6 +12,7 @@ const inter = Inter({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com";
+const GA_ID = "G-FB3PZY44ZK";
 const TITLE = "Yapay Zekâ, Reklam Prodüksiyonu ve Dijital Büyüme";
 const DESCRIPTION =
   "Kırmızı Panda AI Reklam Ajansı: strateji, yapay zekâ, reklam prodüksiyonu, reklam müziği, sinema FX, web, SEO ve dijital büyüme çözümlerini tek çatı altında sunan yaratıcı teknoloji ajansı.";
@@ -167,6 +169,18 @@ export default function RootLayout({
           Ana içeriğe atla
         </a>
         {children}
+
+        {/* Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
       </body>
     </html>
   );
