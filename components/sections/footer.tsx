@@ -126,7 +126,9 @@ export function Footer() {
 
         <div className="mt-6 flex flex-col items-start justify-between gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center">
           <span>© {year} Kırmızı Panda AI Reklam Ajansı. Tüm hakları saklıdır.</span>
-          <span>Strateji · Yapay Zekâ · Prodüksiyon · Ses · Web · Büyüme</span>
+          <Link href="/gizlilik" className="transition-colors hover:text-primary">
+            Gizlilik ve Çerez Politikası (KVKK)
+          </Link>
         </div>
       </div>
     </footer>

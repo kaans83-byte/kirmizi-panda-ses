@@ -22,6 +22,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const legal: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/gizlilik`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+  ];
+
   // Not: /teklif işlevsel bir form sayfasıdır ve noindex'tir; sitemap'e dahil edilmez.
-  return [...home, ...consulting];
+  return [...home, ...consulting, ...legal];
 }

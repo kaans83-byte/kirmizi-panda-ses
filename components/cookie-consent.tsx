@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Cookie } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -67,7 +68,13 @@ export function CookieConsent() {
           </span>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Deneyiminizi iyileştirmek ve site trafiğini ölçmek için çerez kullanıyoruz.
-            Analitik çerezler yalnızca onayınızla çalışır.
+            Analitik çerezler yalnızca onayınızla çalışır.{" "}
+            <Link
+              href="/gizlilik"
+              className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
+            >
+              Gizlilik politikası
+            </Link>
           </p>
         </div>
         <div className="flex shrink-0 gap-3">
