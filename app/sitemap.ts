@@ -6,9 +6,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kirmizipanda.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  // Not: canonical ile birebir aynı olsun diye sondaki eğik çizgi yok.
   const home: MetadataRoute.Sitemap = [
     {
-      url: `${SITE_URL}/`,
+      url: SITE_URL,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 1,

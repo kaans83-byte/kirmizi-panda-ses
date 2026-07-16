@@ -4,7 +4,6 @@ import Script from "next/script";
 import "./globals.css";
 import { CookieConsent } from "@/components/cookie-consent";
 import { company, sameAsLinks } from "@/data/company";
-import { services } from "@/lib/data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,9 +34,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Kırmızı Panda AI Reklam Ajansı" }],
   creator: "Kırmızı Panda",
   publisher: "Kırmızı Panda",
+  // Tek dilli site: hreflang gerekmez, yalnızca canonical.
   alternates: {
     canonical: "/",
-    languages: { "tr-TR": "/" },
   },
   openGraph: {
     type: "website",
@@ -129,24 +128,6 @@ const jsonLd = {
         addressLocality: company.city,
         addressRegion: company.region,
         addressCountry: company.countryCode,
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/#service`,
-      name: "AI Reklam ve Prodüksiyon Hizmetleri",
-      serviceType: "AI Reklam Ajansı Hizmetleri",
-      provider: { "@id": `${SITE_URL}/#org` },
-      areaServed: "TR",
-      description: DESCRIPTION,
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Ajans Hizmetleri",
-        // Tek kaynak: lib/data.ts services başlıklarından üretilir.
-        itemListElement: services.map((s) => ({
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: s.title },
-        })),
       },
     },
   ],
