@@ -2,17 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // SEO: tek kanonik host. www → apex kalıcı (301) yönlendirme (çift içerik önlenir).
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.kirmizipanda.com" }],
-        destination: "https://kirmizipanda.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // Not: www → apex yönlendirmesi `middleware.ts` içinde yapılır.
+  // (App Hosting proxy'si nedeniyle config'teki host eşleşmesi çalışmıyor.)
   async headers() {
     return [
       {
